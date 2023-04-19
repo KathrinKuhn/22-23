@@ -1,7 +1,7 @@
 
 ```{r 'check_ps', include=FALSE}
 
-user.name = 'ENTER A USER NAME HERE'
+user.name = 'Kathrin Kuhn'
 ```
 
 # RTutor Uebungsblatt 4 - Projektkurs
@@ -46,9 +46,7 @@ library(stargazer)
 a) Im ersten Schritt laden wir die zur Verfuegung stehenden Daten. Laden Sie die unter Daten bereitgestellten `EU_Makro.csv` Daten in R.
 
 ```{r "1_a"}
-____ <- read_csv("____")
-
-# enter your code here ...
+eu_makro <- read_csv("C:/Users/kuhn-/OneDrive/Dokumente/GitHub/22-23/problem-sets/ps4/data/EU_Makro.csv")
 
 ```
 Hier waere ein guter Zeitpunkt das Addin 'Check Problemset' auszufuehren!
@@ -75,13 +73,9 @@ Auf den ersten Blick ist zu erkennen, das ein positiver Zusammenhang zwischen de
 b) Eine beliebte Methode einen Zusammenhang in einer einzelnen Zahl zusammenzufassen ist eine einfache lineare Regression mittels der Methode der kleinsten Quadrate (engl. Ordinary Least Squares OLS). Regressieren Sie in R `unempl` auf `debt_share_country_pro`. Speichern Sie das Ergebnis in der Variablen `reg1` und zeigen Sie dann eine Zusammenfassung von `reg1`. Bitte kommentieren Sie hierfuer den Code aus und ergaenzen Sie diesen: 
 
 ```{r "1_b"}
-reg1 <- lm(___~debt_share_country_pro, data=___)
-summary(___)
+reg1 <- lm(unempl~debt_share_country_pro, data=eu_makro)
+summary(reg1)
 
-# enter your code here ...
-
-
-# enter your code here ...
 
 ```
 
@@ -104,17 +98,16 @@ Geben Sie hier Ihrer Antwort gerundet auf drei Nachkommastellen ein. Achten Sie 
 
 ```{r "1_c",optional=TRUE}
 
-# enter your code here ...
+6.895 
 
 ```
 
 d) Manchmal moechten wir mit den geschaetzten Koeffizienten direkt weiterrechnen. Hierfuer ist die Funktion `coef` nuetzlich. Wenden Sie in einem ersten Schritt die Funktion `coef` auf `reg1` an. Anschliessend speichern Sie bitte den ersten Koeffizienten in der Variable `b0` und den zweiten in der Variable `b1`.
 ```{r "1_d"}
 
-# enter your code here ...
-
-
-# enter your code here ...
+coef(reg1)
+b0 <- coef(reg1)[1]
+b1 <- coef(reg1)[2]
 
 ```
 Hier waere ein guter Zeitpunkt das Addin 'Check Problemset' auszufuehren!
@@ -122,9 +115,7 @@ Hier waere ein guter Zeitpunkt das Addin 'Check Problemset' auszufuehren!
 f) Fuegen Sie der Grafik `g1` in "blue" eine Linie mit der in `reg1` berechneten Regressionsgerade hinzu. Speichern Sie diese Grafik als `g2` und lassen Sie sich diese anschliessend anzeigen. Bitte fuellen Sie hierzu die Luecken aus:
 
 ```{r "1_f"}
-g2 <- g1 + geom_abline(intercept=___,slope=___,colour="___")
-
-# enter your code here ...
+g2 <- g1 + geom_abline(intercept= 6.895, slope=0.0382, colour="blue")
 
 g2
 ```
