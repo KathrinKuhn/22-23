@@ -1,0 +1,280 @@
+{"type":["init_ps"],"time":["2023-05-10 08:43:48"],"user":["Kathrin Kuhn"],"umph":[1683701028.8249],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:43:48"],"user":["Kathrin Kuhn"],"umph":[1683701028.8551],"ok":[true],"chunk":[1],"ex":[1],"e.ind":[0],"code":["\n# enter your code here ...\n2"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:43:48"],"user":["Kathrin Kuhn"],"umph":[1683701028.8709],"ok":[false],"chunk":[2],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_b."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 08:47:47"],"user":["Kathrin Kuhn"],"umph":[1683701267.9865],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:47:48"],"user":["Kathrin Kuhn"],"umph":[1683701268.0094],"ok":[false],"chunk":[2],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n4"],"message":["\nYou have not yet entered all correct commands in chunk 1_b."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 08:48:01"],"user":["Kathrin Kuhn"],"umph":[1683701281.3055],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:48:01"],"user":["Kathrin Kuhn"],"umph":[1683701281.3241],"ok":[false],"chunk":[2],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n2"],"message":["\nYou have not yet entered all correct commands in chunk 1_b."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 08:48:20"],"user":["Kathrin Kuhn"],"umph":[1683701300.1356],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:48:20"],"user":["Kathrin Kuhn"],"umph":[1683701300.1565],"ok":[true],"chunk":[2],"ex":[1],"e.ind":[0],"code":["\n# enter your code here ...\n\"nein\""],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:48:22"],"user":["Kathrin Kuhn"],"umph":[1683701302.9558],"ok":[false],"chunk":[3],"ex":[1],"e.ind":[2],"code":["thp <- read_csv(\"./data/THP_clean.csv\") %>%\n  select(newid, uc, depressed_1y, treat, age_baseline, age_baseline_sq, kids_no, famstruct_baseline, grandmother_baseline, edu_mo, edu_fa, employed_mo_baseline, incomeindex, depindex_0, mspss_tot)\n\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_c."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 08:49:42"],"user":["Kathrin Kuhn"],"umph":[1683701382.8774],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:49:44"],"user":["Kathrin Kuhn"],"umph":[1683701384.3456],"ok":[true],"chunk":[3],"ex":[1],"e.ind":[0],"code":["thp <- read_csv(\"./data/THP_clean.csv\") %>%\n  select(newid, uc, depressed_1y, treat, age_baseline, age_baseline_sq, kids_no, famstruct_baseline, grandmother_baseline, edu_mo, edu_fa, employed_mo_baseline, incomeindex, depindex_0, mspss_tot)\n\n# enter your code here ...\nskim(thp)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:49:44"],"user":["Kathrin Kuhn"],"umph":[1683701384.3602],"ok":[false],"chunk":[4],"ex":[1],"e.ind":[1],"code":["thp_plots <- thp %>%\n  mutate(treat_factor = as.factor(ifelse(treat == 1 , \"Treatment\", \"Kontrolle\")),\n         depressed = as.factor(ifelse(depressed_1y == 0, \"keine Depressionen\", \"Depressionen\"))) %>%\n  filter( !is.na(depressed)) \n#plot_prop_depression <- ggplot(___, aes(x = ___, fill = ___)) +\n#  geom_bar(position = \"fill\") +\n#  labs(x = NULL, y = \"Anteil an Depressionen\", fill = NULL) +\n#  scale_fill_manual(values = c(\"darkblue\", \"darkred\"))\n\n#plot_prop_depression\n\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to plot_prop_depression in chunk 1_d."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 08:54:23"],"user":["Kathrin Kuhn"],"umph":[1683701663.4849],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:54:23"],"user":["Kathrin Kuhn"],"umph":[1683701663.6699],"ok":[false],"chunk":[4],"ex":[1],"e.ind":[1],"code":["thp_plots <- thp %>%\n  mutate(treat_factor = as.factor(ifelse(treat == 1 , \"Treatment\", \"Kontrolle\")),\n         depressed = as.factor(ifelse(depressed_1y == 0, \"keine Depressionen\", \"Depressionen\"))) %>%\n  filter( !is.na(depressed)) \nplot_prop_depression <- ggplot(thp_plots, aes(x = depressed_1y, fill = NULL)) +\n  geom_bar(position = \"fill\") +\n  labs(x = NULL, y = \"Anteil an Depressionen\", fill = NULL) +\n  scale_fill_manual(values = c(\"darkblue\", \"darkred\"))\n\nplot_prop_depression\n\n# enter your code here ...\n"],"message":["\nYou have not made a correct assignment to plot_prop_depression in chunk 1_d."]}
+,
+{"type":["hint"],"time":["2023-05-10 08:54:28"],"user":["Kathrin Kuhn"],"umph":[1683701668.5218],"ok":[true],"chunk":[4],"ex":[1],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2023-05-10 08:56:11"],"user":["Kathrin Kuhn"],"umph":[1683701771.9918],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:56:12"],"user":["Kathrin Kuhn"],"umph":[1683701772.34],"ok":[true],"chunk":[4],"ex":[1],"e.ind":[0],"code":["thp_plots <- thp %>%\n  mutate(treat_factor = as.factor(ifelse(treat == 1 , \"Treatment\", \"Kontrolle\")),\n         depressed = as.factor(ifelse(depressed_1y == 0, \"keine Depressionen\", \"Depressionen\"))) %>%\n  filter( !is.na(depressed)) \nplot_prop_depression <- ggplot(thp_plots, aes(x = depressed, fill = treat_factor)) +\n  geom_bar(position = \"fill\") +\n  labs(x = NULL, y = \"Anteil an Depressionen\", fill = NULL) +\n  scale_fill_manual(values = c(\"darkblue\", \"darkred\"))\n\nplot_prop_depression\n\n# enter your code here ...\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:56:12"],"user":["Kathrin Kuhn"],"umph":[1683701772.3507],"ok":[false],"chunk":[5],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_e."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 08:58:05"],"user":["Kathrin Kuhn"],"umph":[1683701885.9404],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:58:05"],"user":["Kathrin Kuhn"],"umph":[1683701885.958],"ok":[false],"chunk":[5],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n\"Ja\""],"message":["\nYou have not yet entered all correct commands in chunk 1_e."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 08:58:21"],"user":["Kathrin Kuhn"],"umph":[1683701901.8362],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:58:21"],"user":["Kathrin Kuhn"],"umph":[1683701901.8582],"ok":[true],"chunk":[5],"ex":[1],"e.ind":[0],"code":["\n# enter your code here ...\n\"ja\""],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:58:21"],"user":["Kathrin Kuhn"],"umph":[1683701901.8696],"ok":[false],"chunk":[6],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n\"überschätzen\""],"message":["\nYou have not yet entered all correct commands in chunk 1_f."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 08:58:42"],"user":["Kathrin Kuhn"],"umph":[1683701922.8491],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:58:42"],"user":["Kathrin Kuhn"],"umph":[1683701922.8666],"ok":[false],"chunk":[6],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n\"ünterschätzen\""],"message":["\nYou have not yet entered all correct commands in chunk 1_f."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 08:58:54"],"user":["Kathrin Kuhn"],"umph":[1683701934.4612],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:58:54"],"user":["Kathrin Kuhn"],"umph":[1683701934.4793],"ok":[true],"chunk":[6],"ex":[1],"e.ind":[0],"code":["\n# enter your code here ...\n\"unterschätzen\""],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:58:54"],"user":["Kathrin Kuhn"],"umph":[1683701934.5922],"ok":[true],"chunk":[7],"ex":[1],"e.ind":[0],"code":["thp %>% \n  pivot_longer(cols = -treat, names_to = \"variable\", values_to = \"value\") %>%\n  group_nest(variable) %>%\n  mutate(t.test = map(data, ~tidy(t.test(value ~ treat, data = .x)))) %>%\n  unnest(t.test) %>%\n  mutate( Mean_Treatment = round(estimate2, 2),\n          Mean_Kontrolle = round(estimate1, 2),\n    Differenz = round(estimate, 4),\n          Signifikanz = round(p.value,4)) %>%\n  select(variable, Mean_Treatment, Mean_Kontrolle, Differenz, Signifikanz)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 08:58:54"],"user":["Kathrin Kuhn"],"umph":[1683701934.6013],"ok":[false],"chunk":[8],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_g."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:00:44"],"user":["Kathrin Kuhn"],"umph":[1683702044.326],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:00:44"],"user":["Kathrin Kuhn"],"umph":[1683702044.3492],"ok":[true],"chunk":[8],"ex":[1],"e.ind":[0],"code":["\n# enter your code here ...\n3"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:00:44"],"user":["Kathrin Kuhn"],"umph":[1683702044.3769],"ok":[false],"chunk":[9],"ex":[1],"e.ind":[3],"code":["reg1 <- lm(depressed_1y ~ treat, data=thp)\nreg2 <- lm(depressed_1y ~ treat + depindex_0, data=thp)\n\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to reg3 in chunk 1_h."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:05:50"],"user":["Kathrin Kuhn"],"umph":[1683702350.1524],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:05:50"],"user":["Kathrin Kuhn"],"umph":[1683702350.2],"ok":[true],"chunk":[9],"ex":[1],"e.ind":[0],"code":["reg1 <- lm(depressed_1y ~ treat, data=thp)\nreg2 <- lm(depressed_1y ~ treat + depindex_0, data=thp)\n\n# enter your code here ...\nreg3 <- lm(depressed_1y ~ treat + depindex_0 + age_baseline + age_baseline_sq + kids_no + famstruct_baseline + grandmother_baseline + edu_mo + edu_fa + employed_mo_baseline + incomeindex + mspss_tot, data=thp)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:05:50"],"user":["Kathrin Kuhn"],"umph":[1683702350.966],"ok":[true],"chunk":[10],"ex":[1],"e.ind":[0],"code":["stargazer( reg1, reg2, reg3 ,type = \"text\",  digits=2, omit.stat = c(\"f\",\"ser\"))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:05:50"],"user":["Kathrin Kuhn"],"umph":[1683702350.9756],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:11:06"],"user":["Kathrin Kuhn"],"umph":[1683702666.6346],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:11:06"],"user":["Kathrin Kuhn"],"umph":[1683702666.6579],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\nc(1,2,4)"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:11:15"],"user":["Kathrin Kuhn"],"umph":[1683702675.1949],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:11:15"],"user":["Kathrin Kuhn"],"umph":[1683702675.2156],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\nc(1,2)"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:11:26"],"user":["Kathrin Kuhn"],"umph":[1683702686.0923],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:11:26"],"user":["Kathrin Kuhn"],"umph":[1683702686.1148],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\nc(1,4)"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:11:34"],"user":["Kathrin Kuhn"],"umph":[1683702694.1887],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:11:34"],"user":["Kathrin Kuhn"],"umph":[1683702694.2093],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\nc(1)"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["hint"],"time":["2023-05-10 09:11:39"],"user":["Kathrin Kuhn"],"umph":[1683702699.4355],"ok":[true],"chunk":[11],"ex":[1],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:11:54"],"user":["Kathrin Kuhn"],"umph":[1683702714.3052],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:11:54"],"user":["Kathrin Kuhn"],"umph":[1683702714.3174],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\nc(1,2,3,4)"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:12:13"],"user":["Kathrin Kuhn"],"umph":[1683702733.6604],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:12:13"],"user":["Kathrin Kuhn"],"umph":[1683702733.6763],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\nc(1,2,3)"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:12:31"],"user":["Kathrin Kuhn"],"umph":[1683702751.018],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:12:31"],"user":["Kathrin Kuhn"],"umph":[1683702751.0333],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\nc(1,2,4)"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:12:47"],"user":["Kathrin Kuhn"],"umph":[1683702767.107],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:12:47"],"user":["Kathrin Kuhn"],"umph":[1683702767.1295],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\nc(1,3,4)"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:12:58"],"user":["Kathrin Kuhn"],"umph":[1683702778.4851],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:12:58"],"user":["Kathrin Kuhn"],"umph":[1683702778.5044],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\nc(2,3,4)"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:13:08"],"user":["Kathrin Kuhn"],"umph":[1683702788.2976],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:13:08"],"user":["Kathrin Kuhn"],"umph":[1683702788.3438],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\nc(2,3)"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:13:19"],"user":["Kathrin Kuhn"],"umph":[1683702799.1318],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:13:19"],"user":["Kathrin Kuhn"],"umph":[1683702799.1515],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\nc(1,2)"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:13:26"],"user":["Kathrin Kuhn"],"umph":[1683702806.1544],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:13:26"],"user":["Kathrin Kuhn"],"umph":[1683702806.1756],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\nc(1,3)"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:13:34"],"user":["Kathrin Kuhn"],"umph":[1683702814.8079],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:13:34"],"user":["Kathrin Kuhn"],"umph":[1683702814.8298],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\nc(1,4)"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:13:49"],"user":["Kathrin Kuhn"],"umph":[1683702829.8524],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:13:49"],"user":["Kathrin Kuhn"],"umph":[1683702829.8714],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\nc(2,3)"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:13:59"],"user":["Kathrin Kuhn"],"umph":[1683702839.694],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:13:59"],"user":["Kathrin Kuhn"],"umph":[1683702839.7105],"ok":[true],"chunk":[11],"ex":[1],"e.ind":[0],"code":["\n# enter your code here ...\nc(2,4)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:13:59"],"user":["Kathrin Kuhn"],"umph":[1683702839.7227],"ok":[false],"chunk":[12],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_j."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:16:00"],"user":["Kathrin Kuhn"],"umph":[1683702960.4902],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:16:00"],"user":["Kathrin Kuhn"],"umph":[1683702960.5105],"ok":[false],"chunk":[12],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n1"],"message":["\nYou have not yet entered all correct commands in chunk 1_j."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:16:19"],"user":["Kathrin Kuhn"],"umph":[1683702979.2194],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:16:19"],"user":["Kathrin Kuhn"],"umph":[1683702979.2481],"ok":[true],"chunk":[12],"ex":[1],"e.ind":[0],"code":["\n# enter your code here ...\n2"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:16:20"],"user":["Kathrin Kuhn"],"umph":[1683702980.7525],"ok":[true],"chunk":[13],"ex":[2],"e.ind":[0],"code":["library(AER)\ndata(Fertility)\nhead(Fertility)\nskim(Fertility)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:16:20"],"user":["Kathrin Kuhn"],"umph":[1683702980.7625],"ok":[false],"chunk":[14],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_a_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:21:54"],"user":["Kathrin Kuhn"],"umph":[1683703314.9457],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:21:54"],"user":["Kathrin Kuhn"],"umph":[1683703314.9606],"ok":[true],"chunk":[14],"ex":[2],"e.ind":[0],"code":["\n# enter your code here ...\n2"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:21:55"],"user":["Kathrin Kuhn"],"umph":[1683703315.5691],"ok":[true],"chunk":[15],"ex":[2],"e.ind":[0],"code":["Fertility <- Fertility %>%\n  mutate(work01 = case_when(work > 0 ~ 1,\n                            work == 0 ~ 0))\n\n# enter your code here ...\nreg1 <- lm(work01 ~ morekids, data = Fertility )\n\n# enter your code here ...\nsummary(reg1)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:21:55"],"user":["Kathrin Kuhn"],"umph":[1683703315.5809],"ok":[false],"chunk":[16],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_c."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:23:25"],"user":["Kathrin Kuhn"],"umph":[1683703405.7791],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:23:25"],"user":["Kathrin Kuhn"],"umph":[1683703405.7917],"ok":[false],"chunk":[16],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n3"],"message":["\nYou have not yet entered all correct commands in chunk 2_c."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:23:38"],"user":["Kathrin Kuhn"],"umph":[1683703418.1189],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:23:38"],"user":["Kathrin Kuhn"],"umph":[1683703418.1378],"ok":[false],"chunk":[16],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n1"],"message":["\nYou have not yet entered all correct commands in chunk 2_c."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:23:46"],"user":["Kathrin Kuhn"],"umph":[1683703426.1073],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:23:46"],"user":["Kathrin Kuhn"],"umph":[1683703426.1264],"ok":[true],"chunk":[16],"ex":[2],"e.ind":[0],"code":["\n# enter your code here ...\n2"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:23:46"],"user":["Kathrin Kuhn"],"umph":[1683703426.3094],"ok":[true],"chunk":[17],"ex":[2],"e.ind":[0],"code":["grViz('digraph G {\n\nx [label=\"erklärende Variable x\"]\ny [label=\"abhängige Variable y\"]\nz [label=\"Instrument z\"]\n\nx -> y [label=\"+\"];\nz -> x [label=\"+\"];\nz -> y [label=\"+\"];\n}')"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:23:46"],"user":["Kathrin Kuhn"],"umph":[1683703426.3467],"ok":[true],"chunk":[18],"ex":[2],"e.ind":[0],"code":["grViz('digraph G {\n\nx [label=\"erklärende Variable x\"]\ny [label=\"abhängige Variable y\"]\nz [label=\"Instrument z\"]\n\nx -> y [label=\"-\"];\nz -> y [label=\"+\"];\n}')"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:23:46"],"user":["Kathrin Kuhn"],"umph":[1683703426.394],"ok":[true],"chunk":[19],"ex":[2],"e.ind":[0],"code":["grViz('digraph G {\n\nx [label=\"erklärende Variable x\"]\ny [label=\"abhängige Variable y\"]\nz [label=\"Instrument z\"]\n\nx -> y [label=\"-\"];\nz -> x [label=\"+\"];\n}')"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:23:46"],"user":["Kathrin Kuhn"],"umph":[1683703426.4118],"ok":[false],"chunk":[20],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_d_4."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:26:37"],"user":["Kathrin Kuhn"],"umph":[1683703597.7337],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:26:37"],"user":["Kathrin Kuhn"],"umph":[1683703597.7491],"ok":[true],"chunk":[20],"ex":[2],"e.ind":[0],"code":["\n# enter your code here ...\n3"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:26:38"],"user":["Kathrin Kuhn"],"umph":[1683703598.5794],"ok":[true],"chunk":[21],"ex":[2],"e.ind":[0],"code":["Fertility <- Fertility %>%\n  mutate(morekids = ifelse(morekids== \"yes\", 1, 0)) %>%\n  mutate(afam = ifelse(afam== \"yes\", 1, 0)) %>%\n  mutate(same_sex = ifelse(gender1== gender2, 1, 0))\n  \nreg1 <-  Fertility %>%\n  lm(morekids ~ gender2, data=.)\n\nreg2 <- Fertility %>%\n  lm(morekids ~ afam, data=.)\n\n reg3 <- Fertility %>%\n  lm(morekids ~ same_sex, data=.)\n\n stargazer(reg1, reg2, reg3, type = \"text\", digits=3)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:26:38"],"user":["Kathrin Kuhn"],"umph":[1683703598.5891],"ok":[false],"chunk":[22],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_e_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:28:52"],"user":["Kathrin Kuhn"],"umph":[1683703732.536],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:28:52"],"user":["Kathrin Kuhn"],"umph":[1683703732.553],"ok":[false],"chunk":[22],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n2"],"message":["\nYou have not yet entered all correct commands in chunk 2_e_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:29:05"],"user":["Kathrin Kuhn"],"umph":[1683703745.8101],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:29:05"],"user":["Kathrin Kuhn"],"umph":[1683703745.8303],"ok":[true],"chunk":[22],"ex":[2],"e.ind":[0],"code":["\n# enter your code here ...\n3"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:29:06"],"user":["Kathrin Kuhn"],"umph":[1683703746.3805],"ok":[true],"chunk":[23],"ex":[2],"e.ind":[0],"code":["\nivreg(work01 ~ morekids | same_sex, data = Fertility) %>% \n  summary(diagnostics=TRUE)\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:29:06"],"user":["Kathrin Kuhn"],"umph":[1683703746.581],"ok":[true],"chunk":[24],"ex":[2],"e.ind":[0],"code":["\nivreg(work01 ~ morekids | same_sex, data = Fertility) %>% \n  summary()\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:29:06"],"user":["Kathrin Kuhn"],"umph":[1683703746.5903],"ok":[false],"chunk":[25],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_f_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:34:33"],"user":["Kathrin Kuhn"],"umph":[1683704073.5786],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:34:33"],"user":["Kathrin Kuhn"],"umph":[1683704073.5958],"ok":[false],"chunk":[25],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_f_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:36:00"],"user":["Kathrin Kuhn"],"umph":[1683704160.1679],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:36:00"],"user":["Kathrin Kuhn"],"umph":[1683704160.1832],"ok":[false],"chunk":[25],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n5"],"message":["\nYou have not yet entered all correct commands in chunk 2_f_2."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:37:01"],"user":["Kathrin Kuhn"],"umph":[1683704221.8413],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:37:01"],"user":["Kathrin Kuhn"],"umph":[1683704221.8598],"ok":[true],"chunk":[25],"ex":[2],"e.ind":[0],"code":["\n# enter your code here ...\n2"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:37:01"],"user":["Kathrin Kuhn"],"umph":[1683704221.8717],"ok":[false],"chunk":[26],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_g."]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:38:24"],"user":["Kathrin Kuhn"],"umph":[1683704304.5146],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:38:24"],"user":["Kathrin Kuhn"],"umph":[1683704304.5342],"ok":[false],"chunk":[26],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\nc(2,3)"],"message":["\nYou have not yet entered all correct commands in chunk 2_g."]}
+,
+{"type":["hint"],"time":["2023-05-10 09:39:33"],"user":["Kathrin Kuhn"],"umph":[1683704373.0056],"ok":[true],"chunk":[26],"ex":[2],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2023-05-10 09:40:14"],"user":["Kathrin Kuhn"],"umph":[1683704414.3753],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:40:14"],"user":["Kathrin Kuhn"],"umph":[1683704414.3893],"ok":[true],"chunk":[26],"ex":[2],"e.ind":[0],"code":["\n# enter your code here ...\nc(1,2,3)"],"message":[""]}
+,
+{"type":["grade_ps"],"time":["2023-05-10 09:41:31"],"user":["Kathrin Kuhn"],"umph":[1683704491.2217],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2023-05-10 09:41:31"],"user":["Kathrin Kuhn"],"umph":[1683704491.2377],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:31"],"user":["Kathrin Kuhn"],"umph":[1683704491.2531],"ok":[true],"chunk":[1],"ex":[1],"e.ind":[0],"code":["\n# enter your code here ...\n2"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:31"],"user":["Kathrin Kuhn"],"umph":[1683704491.2672],"ok":[true],"chunk":[2],"ex":[1],"e.ind":[0],"code":["\n# enter your code here ...\n\"nein\""],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:32"],"user":["Kathrin Kuhn"],"umph":[1683704492.8031],"ok":[true],"chunk":[3],"ex":[1],"e.ind":[0],"code":["thp <- read_csv(\"./data/THP_clean.csv\") %>%\n  select(newid, uc, depressed_1y, treat, age_baseline, age_baseline_sq, kids_no, famstruct_baseline, grandmother_baseline, edu_mo, edu_fa, employed_mo_baseline, incomeindex, depindex_0, mspss_tot)\n\n# enter your code here ...\nskim(thp)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:32"],"user":["Kathrin Kuhn"],"umph":[1683704492.9301],"ok":[true],"chunk":[4],"ex":[1],"e.ind":[0],"code":["thp_plots <- thp %>%\n  mutate(treat_factor = as.factor(ifelse(treat == 1 , \"Treatment\", \"Kontrolle\")),\n         depressed = as.factor(ifelse(depressed_1y == 0, \"keine Depressionen\", \"Depressionen\"))) %>%\n  filter( !is.na(depressed)) \nplot_prop_depression <- ggplot(thp_plots, aes(x = depressed, fill = treat_factor)) +\n  geom_bar(position = \"fill\") +\n  labs(x = NULL, y = \"Anteil an Depressionen\", fill = NULL) +\n  scale_fill_manual(values = c(\"darkblue\", \"darkred\"))\n\nplot_prop_depression\n\n# enter your code here ...\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:32"],"user":["Kathrin Kuhn"],"umph":[1683704492.9411],"ok":[true],"chunk":[5],"ex":[1],"e.ind":[0],"code":["\n# enter your code here ...\n\"ja\""],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:32"],"user":["Kathrin Kuhn"],"umph":[1683704492.9506],"ok":[true],"chunk":[6],"ex":[1],"e.ind":[0],"code":["\n# enter your code here ...\n\"unterschätzen\""],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:33"],"user":["Kathrin Kuhn"],"umph":[1683704493.2283],"ok":[true],"chunk":[7],"ex":[1],"e.ind":[0],"code":["thp %>% \n  pivot_longer(cols = -treat, names_to = \"variable\", values_to = \"value\") %>%\n  group_nest(variable) %>%\n  mutate(t.test = map(data, ~tidy(t.test(value ~ treat, data = .x)))) %>%\n  unnest(t.test) %>%\n  mutate( Mean_Treatment = round(estimate2, 2),\n          Mean_Kontrolle = round(estimate1, 2),\n    Differenz = round(estimate, 4),\n          Signifikanz = round(p.value,4)) %>%\n  select(variable, Mean_Treatment, Mean_Kontrolle, Differenz, Signifikanz)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:33"],"user":["Kathrin Kuhn"],"umph":[1683704493.2367],"ok":[true],"chunk":[8],"ex":[1],"e.ind":[0],"code":["\n# enter your code here ...\n3"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:33"],"user":["Kathrin Kuhn"],"umph":[1683704493.2622],"ok":[true],"chunk":[9],"ex":[1],"e.ind":[0],"code":["reg1 <- lm(depressed_1y ~ treat, data=thp)\nreg2 <- lm(depressed_1y ~ treat + depindex_0, data=thp)\n\n# enter your code here ...\nreg3 <- lm(depressed_1y ~ treat + depindex_0 + age_baseline + age_baseline_sq + kids_no + famstruct_baseline + grandmother_baseline + edu_mo + edu_fa + employed_mo_baseline + incomeindex + mspss_tot, data=thp)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:33"],"user":["Kathrin Kuhn"],"umph":[1683704493.6811],"ok":[true],"chunk":[10],"ex":[1],"e.ind":[0],"code":["stargazer( reg1, reg2, reg3 ,type = \"text\",  digits=2, omit.stat = c(\"f\",\"ser\"))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:33"],"user":["Kathrin Kuhn"],"umph":[1683704493.6919],"ok":[true],"chunk":[11],"ex":[1],"e.ind":[0],"code":["\n# enter your code here ...\nc(2,4)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:33"],"user":["Kathrin Kuhn"],"umph":[1683704493.7016],"ok":[true],"chunk":[12],"ex":[1],"e.ind":[0],"code":["\n# enter your code here ...\n2"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:35"],"user":["Kathrin Kuhn"],"umph":[1683704495.0479],"ok":[true],"chunk":[13],"ex":[2],"e.ind":[0],"code":["library(AER)\ndata(Fertility)\nhead(Fertility)\nskim(Fertility)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:35"],"user":["Kathrin Kuhn"],"umph":[1683704495.0574],"ok":[true],"chunk":[14],"ex":[2],"e.ind":[0],"code":["\n# enter your code here ...\n2"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:35"],"user":["Kathrin Kuhn"],"umph":[1683704495.5651],"ok":[true],"chunk":[15],"ex":[2],"e.ind":[0],"code":["Fertility <- Fertility %>%\n  mutate(work01 = case_when(work > 0 ~ 1,\n                            work == 0 ~ 0))\n\n# enter your code here ...\nreg1 <- lm(work01 ~ morekids, data = Fertility )\n\n# enter your code here ...\nsummary(reg1)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:35"],"user":["Kathrin Kuhn"],"umph":[1683704495.5789],"ok":[true],"chunk":[16],"ex":[2],"e.ind":[0],"code":["\n# enter your code here ...\n2"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:35"],"user":["Kathrin Kuhn"],"umph":[1683704495.7004],"ok":[true],"chunk":[17],"ex":[2],"e.ind":[0],"code":["grViz('digraph G {\n\nx [label=\"erklärende Variable x\"]\ny [label=\"abhängige Variable y\"]\nz [label=\"Instrument z\"]\n\nx -> y [label=\"+\"];\nz -> x [label=\"+\"];\nz -> y [label=\"+\"];\n}')"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:35"],"user":["Kathrin Kuhn"],"umph":[1683704495.731],"ok":[true],"chunk":[18],"ex":[2],"e.ind":[0],"code":["grViz('digraph G {\n\nx [label=\"erklärende Variable x\"]\ny [label=\"abhängige Variable y\"]\nz [label=\"Instrument z\"]\n\nx -> y [label=\"-\"];\nz -> y [label=\"+\"];\n}')"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:35"],"user":["Kathrin Kuhn"],"umph":[1683704495.7614],"ok":[true],"chunk":[19],"ex":[2],"e.ind":[0],"code":["grViz('digraph G {\n\nx [label=\"erklärende Variable x\"]\ny [label=\"abhängige Variable y\"]\nz [label=\"Instrument z\"]\n\nx -> y [label=\"-\"];\nz -> x [label=\"+\"];\n}')"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:35"],"user":["Kathrin Kuhn"],"umph":[1683704495.7701],"ok":[true],"chunk":[20],"ex":[2],"e.ind":[0],"code":["\n# enter your code here ...\n3"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:36"],"user":["Kathrin Kuhn"],"umph":[1683704496.4719],"ok":[true],"chunk":[21],"ex":[2],"e.ind":[0],"code":["Fertility <- Fertility %>%\n  mutate(morekids = ifelse(morekids== \"yes\", 1, 0)) %>%\n  mutate(afam = ifelse(afam== \"yes\", 1, 0)) %>%\n  mutate(same_sex = ifelse(gender1== gender2, 1, 0))\n  \nreg1 <-  Fertility %>%\n  lm(morekids ~ gender2, data=.)\n\nreg2 <- Fertility %>%\n  lm(morekids ~ afam, data=.)\n\n reg3 <- Fertility %>%\n  lm(morekids ~ same_sex, data=.)\n\n stargazer(reg1, reg2, reg3, type = \"text\", digits=3)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:36"],"user":["Kathrin Kuhn"],"umph":[1683704496.4814],"ok":[true],"chunk":[22],"ex":[2],"e.ind":[0],"code":["\n# enter your code here ...\n3"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:37"],"user":["Kathrin Kuhn"],"umph":[1683704497.0606],"ok":[true],"chunk":[23],"ex":[2],"e.ind":[0],"code":["\nivreg(work01 ~ morekids | same_sex, data = Fertility) %>% \n  summary(diagnostics=TRUE)\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:37"],"user":["Kathrin Kuhn"],"umph":[1683704497.481],"ok":[true],"chunk":[24],"ex":[2],"e.ind":[0],"code":["\nivreg(work01 ~ morekids | same_sex, data = Fertility) %>% \n  summary()\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:37"],"user":["Kathrin Kuhn"],"umph":[1683704497.49],"ok":[true],"chunk":[25],"ex":[2],"e.ind":[0],"code":["\n# enter your code here ...\n2"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2023-05-10 09:41:37"],"user":["Kathrin Kuhn"],"umph":[1683704497.4982],"ok":[true],"chunk":[26],"ex":[2],"e.ind":[0],"code":["\n# enter your code here ...\nc(1,2,3)"],"message":[""]}
+,
